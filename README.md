@@ -1,1 +1,1 @@
-# chateio-backend
+# chateio-backend-auth-service
