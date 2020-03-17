@@ -2,7 +2,7 @@ const uuidv1 = require('uuid').v1
 
 
 
-class User {
+class UserModel {
     constructor() {
         this.users = []
     }
@@ -16,7 +16,7 @@ class User {
         return this.users.find(user => user.id === id)
     }
     findUserByNickname(nickname) {
-        return this.users.nickname(user => user.nickname === nickname)
+        return this.users.find(user => user.nickname === nickname)
     }
 
     findUsers() {
@@ -30,5 +30,5 @@ class User {
 }
 
 module.exports = {
-    User
+    UserModel
 }
