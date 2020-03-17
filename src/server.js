@@ -19,7 +19,7 @@ app.use(bodyParse.urlencoded({
 }));
 app.use(bodyParse.json());
 app.use(session({
-    secret: SECRET,
+    secret: SECRET,    
     resave: false,
     saveUninitialized: false
 }));

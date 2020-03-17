@@ -1,9 +1,9 @@
-module.exports = {
-    dialect: 'potsgres',
-    host: process.env.POSTGRESDB_URL,
-    username: process.env.POSTGRESDB_USERNAME,
-    password: process.env.POSTGRESDB_PASSWORD,
-    database: 'chateio',
+module.exports = {    
+    dialect: 'postgres',
+    host: 'localhost',
+    username: 'chateioadm',
+    password: 'babyshark',
+    database: 'chateio',    
     define: {
         timestamps: true,
         underscored: true
