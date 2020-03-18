@@ -4,11 +4,14 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express');
 const app = express();
-const { routes, passport } = require('./routes');
+const routes = require('./routes');
+const passport = require('./passport/passport-instance')
 const flash = require('express-flash');
 const session = require('express-session');
 const bodyParse = require('body-parser');
 const cors = require('cors');
+
+require('./database')
 
 const PORT = process.env.PORT;
 const SECRET = process.env.SESSION_SECRET;
