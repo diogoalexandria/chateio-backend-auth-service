@@ -13,6 +13,7 @@ require('./database');
 const PORT = process.env.PORT ? process.env.PORT : 3333;
 
 app.use(cors());
+app.use(express.json());
 app.use(bodyParse.urlencoded({
     extended: true
 }));
@@ -20,5 +21,5 @@ app.use(bodyParse.json());
 app.use(routes);
 
 app.listen(PORT, () => {
-    console.log(`Server running at port ${PORT}`)
+    console.log(`Server running at port ${PORT}`);
 });

@@ -8,8 +8,8 @@ module.exports = {
         primareyKey: true,
         autoIncrement: true,
         allowNull: false
-      },
-      jwt: {
+      },      
+      refresh_token: {
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -33,7 +33,6 @@ module.exports = {
       }
     });
   },
-
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('tokens');
   }

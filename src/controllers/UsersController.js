@@ -26,18 +26,24 @@ async function findUserByEmail(email){
 async function findUsers() {
     users = await User.findAll();
     return users;
-}
+};
 
-function deleteUser(nickname) {
+function deleteUser(req, res) {
+    nickname = req.body.nickname
     User.destroy({
         where: {
             nickname
         }
     }).then(deletedUser => {
-        console.log(deletedUser, "Foi excluído");
-        return deletedUser;
+        res.status(200).json({
+            message: `${deletedUser} foi excluído`
+        })
+    }).catch(err => {
+        res.json({
+            message: err
+        })
     });    
-}
+};
 
 module.exports = {
     createUser,    
@@ -45,4 +51,4 @@ module.exports = {
     findUserByEmail,
     findUsers,
     deleteUser
-}
+};
